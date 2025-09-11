@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sliante to Saliha! 🍀 An Irish Farewell</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Celtic+Hand&family=Merriweather:wght@300;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Celtic+Hand&family=Merriweather:wght@300;400;700&family=Dancing+Script:wght@400;600;700&display=swap');
         
         * {
             margin: 0;
@@ -14,11 +14,18 @@
         }
         
         html, body {
-            background: linear-gradient(135deg, #228B22, #32CD32, #006400);
+            background: linear-gradient(135deg, #1a5d1a, #228B22, #2e7d32, #388e3c, #43a047);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
             font-family: 'Merriweather', serif;
             color: #fff;
             min-height: 100vh;
             position: relative;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         body::before {
@@ -28,16 +35,23 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='20' fill='rgba(255,255,255,0.2)'%3E🍀%3C/text%3E%3C/svg%3E") repeat;
-            background-size: 60px 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='18' fill='rgba(255,255,255,0.15)'%3E🍀%3C/text%3E%3C/svg%3E") repeat;
+            background-size: 80px 80px;
             pointer-events: none;
             z-index: 0;
+            animation: floatPattern 20s linear infinite;
+        }
+
+        @keyframes floatPattern {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(40px, 40px); }
         }
         
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 10px;
+            padding-bottom: 100px;
             position: relative;
             z-index: 2;
             display: flex;
@@ -47,21 +61,48 @@
         
         .header {
             text-align: center;
-            background: rgba(0, 100, 0, 0.8);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 2px solid #FFD700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(145deg, rgba(0, 100, 0, 0.9), rgba(34, 139, 34, 0.8));
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 3px solid #FFD700;
+            box-shadow: 
+                0 0 30px rgba(255, 215, 0, 0.6),
+                inset 0 0 20px rgba(255, 215, 0, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(30deg); }
         }
         
         .title {
             font-family: 'Celtic Hand', cursive;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: #FFD700;
-            text-shadow: 2px 2px 0px #006400;
-            margin-bottom: 5px;
+            text-shadow: 
+                2px 2px 0px #006400,
+                4px 4px 10px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
             animation: bounce 2s infinite;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 1px;
         }
         
         @keyframes bounce {
@@ -71,28 +112,41 @@
         }
         
         .subtitle {
-            font-size: 1rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
             color: #90EE90;
-            font-style: italic;
-            margin-bottom: 10px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
         }
         
         .irish-blessing {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px;
-            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(144, 238, 144, 0.1));
+            padding: 15px;
+            border-radius: 12px;
             font-style: italic;
-            border-left: 3px solid #FFD700;
-            font-size: 0.85rem;
+            border: 2px solid rgba(255, 215, 0, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         
         .itinerary {
-            background: rgba(0, 100, 0, 0.9);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            border: 2px solid #32CD32;
+            background: linear-gradient(145deg, rgba(0, 100, 0, 0.9), rgba(34, 139, 34, 0.85));
+            border-radius: 15px;
+            padding: 25px;
+            margin: 15px 0;
+            border: 2px solid rgba(50, 205, 50, 0.8);
             flex: 1;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
         }
         
         .itinerary h2 {
@@ -106,17 +160,38 @@
         .timeline-item {
             display: flex;
             align-items: center;
-            margin: 8px 0;
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            border-left: 3px solid #FFD700;
-            transition: transform 0.3s ease;
+            margin: 12px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(144, 238, 144, 0.1));
+            border-radius: 12px;
+            border-left: 4px solid #FFD700;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            transition: left 0.6s ease;
         }
         
         .timeline-item:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(15px) scale(1.02);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(144, 238, 144, 0.2));
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .timeline-item:hover::before {
+            left: 100%;
         }
         
         .time {
@@ -144,8 +219,15 @@
         }
         
         .emoji {
-            font-size: 1.5rem;
-            margin-left: 10px;
+            font-size: 1.8rem;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+        }
+
+        .timeline-item:hover .emoji {
+            transform: scale(1.2) rotate(10deg);
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
         }
         
         .footer {
@@ -173,40 +255,88 @@
         }
         
         .fun-fact {
-            background: rgba(255, 215, 0, 0.2);
-            border: 1px dashed #FFD700;
-            border-radius: 6px;
-            padding: 8px;
-            margin: 8px 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 215, 0, 0.15));
+            border: 2px dashed rgba(255, 215, 0, 0.8);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
             font-style: italic;
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+            animation: pulse 3s infinite;
+            position: relative;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+                border-color: rgba(255, 215, 0, 0.8);
+            }
+            50% { 
+                box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+                border-color: rgba(255, 215, 0, 1);
+            }
         }
         
         @media (max-width: 768px) {
             .title {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
             }
             
             .container {
-                padding: 5px;
-                padding-bottom: 60px;
+                padding: 10px;
+                padding-bottom: 120px;
+            }
+
+            .header {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+
+            .itinerary {
+                padding: 20px;
             }
             
             .timeline-item {
                 flex-direction: column;
                 text-align: center;
-                padding: 6px;
+                padding: 12px;
+                margin: 10px 0;
+            }
+
+            .timeline-item:hover {
+                transform: translateY(-5px) scale(1.02);
             }
             
             .time {
-                margin-bottom: 5px;
+                margin-bottom: 8px;
                 margin-right: 0;
-                font-size: 0.85rem;
+                font-size: 0.9rem;
+                background: rgba(255, 215, 0, 0.2);
+                padding: 5px 10px;
+                border-radius: 8px;
+                display: inline-block;
+            }
+
+            .emoji {
+                font-size: 1.5rem;
+                margin: 10px 0 0 0;
             }
             
             .footer {
-                margin-bottom: 40px;
+                margin-bottom: 80px;
+                padding: 15px;
+            }
+
+            .fun-fact {
+                padding: 12px;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -294,11 +424,12 @@
             <p><em>"May your troubles be as few as your teeth, and may your blessings be as many as the shamrocks in the field!"</em></p>
             <div class="fun-fact">
                 <strong>Party Rules:</strong><br>
-                1. Everything must be described as "grand" or "brilliant"<br>
-                2. At least one person must attempt an Irish accent<br>
-                3. If someone mentions potatoes, everyone takes a sip<br>
-                4. Dancing is mandatory after 9 PM<br>
-                5. Saliha gets the biggest slice of cake (because she's the star!)
+                1. Everyone must wear GREEN (it's the law of the Emerald Isle!)<br>
+                2. Everything must be described as "grand" or "brilliant"<br>
+                3. At least one person must attempt an Irish accent<br>
+                4. If someone mentions potatoes, everyone takes a sip<br>
+                5. Dancing is mandatory after 9 PM<br>
+                6. Saliha gets the biggest slice of cake (because she's the star!)
             </div>
             <p><strong>Erin go Bragh! 🇮🇪</strong></p>
         </footer>
