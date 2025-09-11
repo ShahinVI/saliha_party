@@ -17,10 +17,8 @@
             background: linear-gradient(135deg, #228B22, #32CD32, #006400);
             font-family: 'Merriweather', serif;
             color: #fff;
-            height: 100vh;
             min-height: 100vh;
             position: relative;
-            overflow: hidden;
         }
         
         body::before {
@@ -38,14 +36,13 @@
         
         .container {
             max-width: 1000px;
-            height: 100vh;
             margin: 0 auto;
             padding: 10px;
             position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
-            overflow-y: auto;
+            min-height: 100vh;
         }
         
         .header {
@@ -193,6 +190,7 @@
             
             .container {
                 padding: 5px;
+                padding-bottom: 60px;
             }
             
             .timeline-item {
@@ -205,6 +203,10 @@
                 margin-bottom: 5px;
                 margin-right: 0;
                 font-size: 0.85rem;
+            }
+            
+            .footer {
+                margin-bottom: 40px;
             }
         }
     </style>
@@ -227,7 +229,8 @@
                 <div class="time">6:30</div>
                 <div class="event">
                     <h3>The Gathering of the Clans</h3>
-                    <p>Early birds arrive to claim the best seats and practice their Irish accents. Warning: Leprechaun jokes are mandatory from this point forward!</p>
+                    <p>Early birds arrive at <strong>Le Soleil Berlin - Cafe - Bar - Lounge</strong> to claim the best seats and practice their Irish accents. Warning: Leprechaun jokes are mandatory from this point forward!</p>
+                    <p><a href="https://maps.app.goo.gl/kSbegDH8arrtsN1G9?g_st=ipc" target="_blank" style="color: #FFD700; text-decoration: underline;">📍 View on Maps</a></p>
                 </div>
                 <div class="emoji">🍺</div>
             </div>
