@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İyi ki doğdun Mert! 🇹🇷 A Turkish Birthday Celebration</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Lora:wght@400;600;700&family=Dancing+Script:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap');
 
         * {
             margin: 0;
@@ -14,11 +14,11 @@
         }
 
         html, body {
-            background: linear-gradient(135deg, #E30A17, #C70039, #900C3F, #581845, #8B0000);
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f5 25%, #ffe8e8 50%, #fff5f5 75%, #ffffff 100%);
             background-size: 400% 400%;
-            animation: gradientShift 8s ease-in-out infinite;
-            font-family: 'Lora', serif;
-            color: #fff;
+            animation: gradientShift 12s ease-in-out infinite;
+            font-family: 'Poppins', sans-serif;
+            color: #2d2d2d;
             min-height: 100vh;
             position: relative;
         }
@@ -35,16 +35,31 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.5em' font-size='18' fill='rgba(255,255,255,0.15)'%3E🌙%3C/text%3E%3Ctext y='0.9em' x='40' font-size='16' fill='rgba(255,255,255,0.12)'%3E⭐%3C/text%3E%3C/svg%3E") repeat;
-            background-size: 80px 80px;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(227, 10, 23, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(227, 10, 23, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(227, 10, 23, 0.02) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
-            animation: floatPattern 20s linear infinite;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.5em' font-size='20' fill='rgba(227,10,23,0.08)'%3E🌙%3C/text%3E%3Ctext y='0.9em' x='40' font-size='18' fill='rgba(227,10,23,0.06)'%3E⭐%3C/text%3E%3C/svg%3E") repeat;
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: 0;
+            animation: floatPattern 25s linear infinite;
         }
 
         @keyframes floatPattern {
             0% { transform: translate(0, 0); }
-            100% { transform: translate(40px, 40px); }
+            100% { transform: translate(50px, 50px); }
         }
 
         .container {
@@ -61,15 +76,15 @@
 
         .header {
             text-align: center;
-            background: linear-gradient(145deg, rgba(227, 10, 23, 0.9), rgba(139, 0, 0, 0.8));
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 3px solid #FFD700;
+            background: linear-gradient(145deg, #ffffff 0%, #fff 100%);
+            border-radius: 25px;
+            padding: 40px 25px;
+            margin-bottom: 30px;
+            border: 3px solid #E30A17;
             box-shadow:
-                0 0 30px rgba(255, 215, 0, 0.6),
-                inset 0 0 20px rgba(255, 215, 0, 0.1);
-            backdrop-filter: blur(10px);
+                0 15px 50px rgba(227, 10, 23, 0.15),
+                0 5px 15px rgba(227, 10, 23, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
             position: relative;
             overflow: hidden;
         }
@@ -81,8 +96,19 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-            animation: shimmer 3s linear infinite;
+            background: linear-gradient(45deg, transparent, rgba(227, 10, 23, 0.05), transparent);
+            animation: shimmer 4s linear infinite;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #E30A17, transparent);
+            animation: slideGlow 2s ease-in-out infinite;
         }
 
         @keyframes shimmer {
@@ -90,85 +116,104 @@
             100% { transform: translateX(100%) translateY(100%) rotate(30deg); }
         }
 
+        @keyframes slideGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
         .title {
-            font-family: 'Satisfy', cursive;
-            font-size: 2.2rem;
-            color: #FFD700;
-            text-shadow:
-                2px 2px 0px #8B0000,
-                4px 4px 10px rgba(0, 0, 0, 0.3),
-                0 0 20px rgba(255, 215, 0, 0.5);
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #E30A17 0%, #C70039 50%, #E30A17 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 10px;
             animation: bounce 2s infinite;
             position: relative;
             z-index: 1;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            filter: drop-shadow(0 2px 4px rgba(227, 10, 23, 0.2));
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-8px); }
         }
 
         .subtitle {
             font-family: 'Dancing Script', cursive;
-            font-size: 1.3rem;
-            color: #FFB6C1;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            font-size: 1.6rem;
+            color: #E30A17;
+            font-weight: 700;
+            margin-bottom: 20px;
             position: relative;
             z-index: 1;
         }
 
         .turkish-blessing {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 182, 193, 0.1));
-            padding: 15px;
-            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(227, 10, 23, 0.05), rgba(227, 10, 23, 0.02));
+            padding: 20px;
+            border-radius: 15px;
             font-style: italic;
-            border: 2px solid rgba(255, 215, 0, 0.6);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            border: 2px solid rgba(227, 10, 23, 0.2);
+            font-size: 1rem;
+            line-height: 1.6;
             position: relative;
             z-index: 1;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: #555;
+            box-shadow: 0 5px 20px rgba(227, 10, 23, 0.08);
         }
 
         .itinerary {
-            background: linear-gradient(145deg, rgba(139, 0, 0, 0.9), rgba(227, 10, 23, 0.85));
-            border-radius: 15px;
-            padding: 25px;
-            margin: 15px 0;
-            border: 2px solid rgba(255, 215, 0, 0.8);
+            background: #ffffff;
+            border-radius: 25px;
+            padding: 35px 25px;
+            margin: 20px 0;
+            border: 3px solid #E30A17;
             flex: 1;
-            backdrop-filter: blur(10px);
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.3),
-                inset 0 0 20px rgba(255, 255, 255, 0.1);
+                0 15px 50px rgba(227, 10, 23, 0.12),
+                0 5px 15px rgba(227, 10, 23, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 1);
+            position: relative;
+        }
+
+        .itinerary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #E30A17, transparent);
+            border-radius: 0 0 10px 10px;
         }
 
         .itinerary h2 {
-            color: #FFD700;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            color: #E30A17;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
             text-align: center;
-            text-shadow: 1px 1px 0px #8B0000;
+            font-family: 'Playfair Display', serif;
         }
 
         .timeline-item {
             display: flex;
             align-items: center;
-            margin: 12px 0;
-            padding: 15px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 182, 193, 0.1));
-            border-radius: 12px;
-            border-left: 4px solid #FFD700;
+            margin: 18px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
+            border-radius: 18px;
+            border-left: 5px solid #E30A17;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(227, 10, 23, 0.08);
         }
 
         .timeline-item::before {
@@ -178,16 +223,17 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(227, 10, 23, 0.08), transparent);
             transition: left 0.6s ease;
         }
 
         .timeline-item:hover {
             transform: translateX(15px) scale(1.02);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 182, 193, 0.2));
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.2),
-                0 0 20px rgba(255, 215, 0, 0.3);
+                0 10px 35px rgba(227, 10, 23, 0.15),
+                0 0 30px rgba(227, 10, 23, 0.1);
+            border-left-color: #C70039;
         }
 
         .timeline-item:hover::before {
@@ -195,11 +241,12 @@
         }
 
         .time {
-            font-size: 0.95rem;
-            font-weight: bold;
-            color: #FFD700;
-            min-width: 60px;
-            margin-right: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #E30A17;
+            min-width: 70px;
+            margin-right: 15px;
+            font-family: 'Playfair Display', serif;
         }
 
         .event {
@@ -207,46 +254,56 @@
         }
 
         .event h3 {
-            color: #FFB6C1;
-            font-size: 0.95rem;
-            margin-bottom: 3px;
+            color: #E30A17;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
         .event p {
-            color: #E0E0E0;
-            line-height: 1.3;
-            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .event a {
-            color: #FFD700;
-            text-decoration: underline;
+            color: #E30A17;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(227, 10, 23, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .event a:hover {
+            border-bottom-color: #E30A17;
         }
 
         .emoji {
-            font-size: 1.8rem;
-            margin-left: 15px;
+            font-size: 2.2rem;
+            margin-left: 20px;
             transition: all 0.3s ease;
-            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+            filter: drop-shadow(0 2px 8px rgba(227, 10, 23, 0.2));
         }
 
         .timeline-item:hover .emoji {
-            transform: scale(1.2) rotate(10deg);
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+            transform: scale(1.3) rotate(15deg);
+            filter: drop-shadow(0 4px 12px rgba(227, 10, 23, 0.4));
         }
 
         .footer {
             text-align: center;
-            background: rgba(139, 0, 0, 0.8);
-            border-radius: 8px;
-            padding: 10px;
-            margin-top: 10px;
-            border: 2px solid #FFD700;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 3px solid #E30A17;
+            box-shadow: 0 10px 40px rgba(227, 10, 23, 0.1);
         }
 
         .footer p {
-            font-size: 0.85rem;
-            margin: 5px 0;
+            font-size: 1rem;
+            margin: 10px 0;
+            color: #2d2d2d;
         }
 
         .crescent {
@@ -260,88 +317,88 @@
         }
 
         .fun-fact {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 215, 0, 0.15));
-            border: 2px dashed rgba(255, 215, 0, 0.8);
-            border-radius: 12px;
-            padding: 15px;
-            margin: 15px 0;
+            background: linear-gradient(135deg, rgba(227, 10, 23, 0.08), rgba(227, 10, 23, 0.04));
+            border: 2px solid rgba(227, 10, 23, 0.2);
+            border-radius: 18px;
+            padding: 20px;
+            margin: 20px 0;
             font-style: italic;
             text-align: center;
-            font-size: 0.85rem;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+            font-size: 0.95rem;
+            color: #555;
+            box-shadow: 0 5px 20px rgba(227, 10, 23, 0.08);
             animation: pulse 3s infinite;
             position: relative;
         }
 
         @keyframes pulse {
             0%, 100% {
-                box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
-                border-color: rgba(255, 215, 0, 0.8);
+                box-shadow: 0 5px 20px rgba(227, 10, 23, 0.08);
+                border-color: rgba(227, 10, 23, 0.2);
             }
             50% {
-                box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
-                border-color: rgba(255, 215, 0, 1);
+                box-shadow: 0 8px 30px rgba(227, 10, 23, 0.15);
+                border-color: rgba(227, 10, 23, 0.35);
             }
         }
 
         @media (max-width: 768px) {
             .title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .subtitle {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
 
             .container {
-                padding: 10px;
+                padding: 15px;
                 padding-bottom: 120px;
             }
 
             .header {
-                padding: 20px;
-                margin-bottom: 15px;
+                padding: 30px 20px;
+                margin-bottom: 20px;
             }
 
             .itinerary {
-                padding: 20px;
+                padding: 25px 20px;
             }
 
             .timeline-item {
                 flex-direction: column;
                 text-align: center;
-                padding: 12px;
-                margin: 10px 0;
+                padding: 18px;
+                margin: 15px 0;
             }
 
             .timeline-item:hover {
-                transform: translateY(-5px) scale(1.02);
+                transform: translateY(-8px) scale(1.02);
             }
 
             .time {
-                margin-bottom: 8px;
+                margin-bottom: 12px;
                 margin-right: 0;
-                font-size: 0.9rem;
-                background: rgba(255, 215, 0, 0.2);
-                padding: 5px 10px;
-                border-radius: 8px;
+                font-size: 1rem;
+                background: linear-gradient(135deg, rgba(227, 10, 23, 0.1), rgba(227, 10, 23, 0.05));
+                padding: 8px 15px;
+                border-radius: 12px;
                 display: inline-block;
             }
 
             .emoji {
-                font-size: 1.5rem;
-                margin: 10px 0 0 0;
+                font-size: 2rem;
+                margin: 15px 0 0 0;
             }
 
             .footer {
                 margin-bottom: 80px;
-                padding: 15px;
+                padding: 20px;
             }
 
             .fun-fact {
-                padding: 12px;
-                font-size: 0.8rem;
+                padding: 18px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -351,6 +408,9 @@
         <header class="header">
             <h1 class="title">İyi ki doğdun Mert! 🇹🇷</h1>
             <p class="subtitle">A Turkish Birthday Celebration</p>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 15px 0; flex-wrap: wrap;">
+                <img src="assets/gif/flag-turkey.gif" alt="Turkish flag" style="max-width: 180px; border-radius: 15px; box-shadow: 0 5px 20px rgba(227, 10, 23, 0.2);">
+            </div>
             <div class="turkish-blessing">
                 "Nice yaşlara Mert!"<br>
                 May your birthday be filled with joy, lamb, and endless adventures! 🎂
@@ -367,7 +427,9 @@
                     <p>Time to collect Mert and start the Turkish birthday adventure! <strong>SURPRISE!</strong> We'll greet him with glitter burst tubes (party poppers) to kick off the celebration! 🎊</p>
                     <p><a href="https://maps.app.goo.gl/L1XiT6WbVytShHUq8?g_st=ipc" target="_blank">📍 View Pickup Location</a></p>
                 </div>
-                <div class="emoji">🎉</div>
+                <div class="emoji">
+                    <img src="assets/gif/erdogan-turkey.gif" alt="Erdogan approval" style="max-width: 100px; border-radius: 12px; box-shadow: 0 3px 15px rgba(227, 10, 23, 0.15);">
+                </div>
             </div>
 
             <div class="timeline-item">
@@ -377,21 +439,30 @@
                     <p>The main event: enjoying authentic Turkish cuisine, including the legendary <strong>sheep's head</strong>! Are you brave enough for this traditional delicacy?</p>
                     <p><a href="https://maps.app.goo.gl/68XgvZysXxiFeqUE8?g_st=ipc" target="_blank">📍 View Restaurant Location</a></p>
                 </div>
-                <div class="emoji">🐑</div>
+                <div class="emoji">
+                    <img src="assets/gif/turkey.gif" alt="Turkish flag" style="max-width: 90px; border-radius: 12px;">
+                </div>
             </div>
 
-            <div class="fun-fact">
-                💡 <strong>Turkish Tradition:</strong> Eating sheep's head (kelle) is a special occasion dish in Turkish cuisine. It's rich in flavor and considered a delicacy - perfect for celebrating!
+            <div class="fun-fact" style="display: flex; align-items: center; gap: 20px;">
+                <div style="flex: 1;">
+                    💡 <strong>Turkish Tradition:</strong> Eating sheep's head (kelle) is a special occasion dish in Turkish cuisine. It's rich in flavor and considered a delicacy - perfect for celebrating!
+                </div>
+                <div>
+                    <img src="assets/gif/turkey-turkiye.gif" alt="Turkish pride" style="max-width: 120px; border-radius: 12px;">
+                </div>
             </div>
 
             <div class="timeline-item">
                 <div class="time">21:30</div>
                 <div class="event">
-                    <h3>Get the Birthday Cake!</h3>
-                    <p>No Turkish birthday is complete without cake! Time to pick up something sweet to celebrate our birthday boy.</p>
-                    <p><a href="https://maps.app.goo.gl/nka4pSwrFuur7cC29?g_st=ipc" target="_blank">📍 View Cake Shop Location</a></p>
+                    <h3>Cake Time!</h3>
+                    <p>No Turkish birthday is complete without cake! The cake (pre-bought and stored at the restaurant) will be brought out to celebrate our birthday boy!</p>
+                    <p><a href="https://maps.app.goo.gl/nka4pSwrFuur7cC29?g_st=ipc" target="_blank">📍 Cake Shop Location (for reference)</a></p>
                 </div>
-                <div class="emoji">🎂</div>
+                <div class="emoji">
+                    <img src="assets/gif/zemo-turkish-delight-turkish-delight.gif" alt="Turkish delight" style="max-width: 90px; border-radius: 12px;">
+                </div>
             </div>
 
             <div class="timeline-item">
@@ -400,11 +471,16 @@
                     <h3>Bar Hopping Adventures!</h3>
                     <p>The night is young! Time to explore the nightlife and celebrate properly. We'll hop from bar to bar, making memories and toasting to Mert!</p>
                 </div>
-                <div class="emoji">🍻</div>
+                <div class="emoji">
+                    <img src="assets/gif/erdoğan.gif" alt="Erdogan walking" style="max-width: 90px; border-radius: 12px; box-shadow: 0 3px 15px rgba(227, 10, 23, 0.15);">
+                </div>
             </div>
 
             <div class="fun-fact">
-                🎈 <strong>Special Note:</strong> While we celebrate tonight, Mert's actual birthday is on <strong>Sunday, October 19th</strong>! So this is just the warm-up - the real celebration continues tomorrow! 🎉
+                🎈 <strong>Special Note:</strong> While we celebrate tonight, Mert's actual birthday is on <strong>Sunday, October 19th</strong>! So this is just the warm-up - the real celebration starts at <strong>00:00 (midnight)</strong>! 🎉
+                <div style="margin-top: 15px; display: flex; gap: 15px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <img src="assets/gif/türk-bayrağı-bayrak.gif" alt="Turkish flag" style="max-width: 160px; border-radius: 12px;">
+                </div>
             </div>
 
             <div class="fun-fact">
@@ -414,6 +490,9 @@
 
         <footer class="footer">
             <p><span class="crescent">🌙</span> <strong>Tonight we celebrate Mert in true Turkish style!</strong> <span class="crescent">⭐</span></p>
+            <div style="display: flex; gap: 20px; justify-content: center; align-items: center; margin: 15px 0; flex-wrap: wrap;">
+                <img src="assets/gif/turkish-man.gif" alt="Turkish celebration" style="max-width: 160px; border-radius: 12px; box-shadow: 0 5px 20px rgba(227, 10, 23, 0.15);">
+            </div>
             <p><em>"Doğum günün kutlu olsun, Mert! May this year bring you happiness, health, and many more adventures!"</em></p>
             <div class="fun-fact">
                 <strong>Birthday Celebration Rules:</strong><br>
